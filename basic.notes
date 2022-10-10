@@ -1,0 +1,34 @@
+Contact Application: This application is developed about saving user Contacts.
+====> Screens: 
+    -> Login Screen
+    -> Register Screen
+       Details about Register Screen files
+       ==> screens/register/index.js
+          //In this file, we call the components/Register/index.js component and also call the api to get the data.
+          //Apply the field authentication .... checking the errors and empty field
+          //Declare the functions [onSubmit() and onChange()] and pass both as a arguments to componets/Register/index.js
+          <RegisterComponents
+            onSubmit={onSubmit}
+            onChange={onChange}
+            form={form}
+            errors={errors}
+            error={error}
+            loading={loading}
+           />
+           //Some parameter we get declare in context/initialsStates/authState.js: {error, loading, data}
+       ==> components/Register/index.js 
+          //In this file, we declare all the aspects which is required in the screen (i.e Input, CustomButton, Text).
+          //And pass all the arguments which come from RegisterComponents to all the components where it's needs
+          [onSubmit, onChange, form, errors, error, loading]
+
+       ++==> Additional Information : Here we use context Api 
+           1. Declare initialsStates in == context/initialsStates/authState.js ==
+              [isLoggedIn, data, error, loading]
+           2. Also declare Some == constant/actionTypes/index.js == [REGISTER_LOADING, REGISTER_SUCCESS, REGISTER_FAILED]  
+           3. Update these actionTypes through == reducer/auth.js == [here we define each types using SWITCH STATEMENT] 
+              
+       ==> 
+    -> Setting
+    -> Create Contacts
+    -> Contacts
+    -> Contact Details
