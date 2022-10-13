@@ -61,5 +61,3 @@ const HomeNavigator = () => {
 };
 
 export default HomeNavigator;
-
-const styles = StyleSheet.create({});

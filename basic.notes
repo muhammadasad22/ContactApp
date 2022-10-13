@@ -26,9 +26,12 @@ Contact Application: This application is developed about saving user Contacts.
               [isLoggedIn, data, error, loading]
            2. Also declare Some == constant/actionTypes/index.js == [REGISTER_LOADING, REGISTER_SUCCESS, REGISTER_FAILED]  
            3. Update these actionTypes through == reducer/auth.js == [here we define each types using SWITCH STATEMENT] 
-              
+         
        ==> 
     -> Setting
     -> Create Contacts
     -> Contacts
     -> Contact Details
+
+
+==> CREATE MODAL IN CONTACT SCREEN

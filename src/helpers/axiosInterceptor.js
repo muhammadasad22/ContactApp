@@ -9,7 +9,7 @@ const AxiosInstance = axios.create({
   headers, //create headers that we share across requests
 });
 
-// console.log('env.REACT_APP_DEV_MODE >>', envs.REACT_APP_DEV_MODE);
+console.log('env.REACT_APP_DEV_MODE >>', envs.BACKEND_URL);
 
 //here we need to create the request interceptors
 //request interceptor: allows you to write or create a piece of your code before the request send

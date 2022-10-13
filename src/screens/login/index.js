@@ -18,6 +18,7 @@ const Login = () => {
       setForm({...form, userName: params.data.username});
     }
   }, [params]);
+
   const {
     authDispatch,
     authState: {error, loading},

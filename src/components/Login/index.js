@@ -1,12 +1,12 @@
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React, {useState} from 'react';
 import Input from '../common/Input';
-import CustomButton from '../common/customButton';
 import Container from '../common/container';
 import colors from '../../assets/theme/colors';
 import {REGISTER} from '../../constant/routeNames';
 import {useNavigation} from '@react-navigation/native';
 import Message from '../common/Message';
+import CustomButton from '../common/customButton';
 
 const LoginComponent = ({
   error,
@@ -79,7 +79,7 @@ const LoginComponent = ({
       />
       <CustomButton
         title={'Submit'}
-        primary
+        secondary
         onPress={onSubmit}
         disabled={loading}
         loading={loading}

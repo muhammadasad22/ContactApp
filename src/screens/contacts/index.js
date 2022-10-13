@@ -1,11 +1,41 @@
-import {Alert, Text, TouchableOpacity, View} from 'react-native';
-import React, {useContext} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import Container from '../../components/common/container';
 import {GlobleContext} from '../../context/Providers';
-import logoutUser from '../../context/actions/auth/logoutUser';
+import ContactsComponents from '../../components/ContactsComponents';
+import getContacts from '../../context/actions/contacts/getContacts';
+import {View} from 'react-native';
 
 const Contacts = () => {
-  return <Container style={{marginTop: 50}}></Container>;
+  const [modalVisible, setModalVisible] = useState(false);
+
+  const {
+    contactsDispatch,
+    contactsState: {
+      getContacts: {data, loading, error},
+    },
+  } = useContext(GlobleContext);
+
+  //console.log('contactsState', contactsState);
+  console.log('getContacts', data);
+  console.log('loading', loading);
+
+  useEffect(() => {
+    getContacts()(contactsDispatch);
+  }, []);
+
+  return (
+    <View
+      style={{
+        marginHorizontal: 15,
+      }}>
+      <ContactsComponents
+        modalVisible={modalVisible}
+        setModalVisible={setModalVisible}
+        data={data}
+        loading={loading}
+      />
+    </View>
+  );
 };
 
 export default Contacts;
